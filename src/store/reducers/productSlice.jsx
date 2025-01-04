@@ -1,31 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
-    data: [
-        {
-            id: 1,
-            name: "Product 1",
-            price: 100,
-        },
-        {
-            id: 2,
-            name: "Product 2",
-            price: 200,
-        },
-        {
-            id: 3,
-            name: "Product 3",
-            price: 300,
-        },
-    ],
+    data: [],
 };
 const productSlice = createSlice({
     name: "products",
     initialState,
     reducers: {
+        getdata: (state, action) => {
+            state.data = action.payload;
+        },
         add: (state, action) => {
             state.data.push(action.payload);
+        },
+        remove: (state) => {
+            state.data.pop();
         },
     },
 });
 export default productSlice.reducer;
-export const { add } = productSlice.actions;
+export const { getdata, add, remove } = productSlice.actions;

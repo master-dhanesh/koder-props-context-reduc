@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { add } from "../store/reducers/productSlice";
+import { add, asyncremove } from "../store/actions/productActions";
 
 const Two = () => {
     const { data } = useSelector((state) => state.products);
@@ -15,10 +15,15 @@ const Two = () => {
 
         disptach(add(newProduct));
     };
+
+    const RemoveHandler = () => {
+        disptach(asyncremove());
+    };
     return (
         <div>
-            Two
+            Two <br />
             <button onClick={AddHandler}>Add Data</button>
+            <button onClick={RemoveHandler}>Remove Data</button>
         </div>
     );
 };
