@@ -1,24 +1,16 @@
-import { useDispatch, useSelector } from "react-redux";
-import { create } from "./store/reducers/productSlice";
+import { useSelector } from "react-redux";
 
 const App = () => {
-    const dispatch = useDispatch();
-    const { data } = useSelector((state) => state.products);
-    console.log(data);
-
-    const CreateHandler = () => {
-        const newproduct = {
-            id: 4,
-            name: "Product 4",
-            price: 400,
-        };
-        dispatch(create(newproduct));
-    };
+    const { data: products } = useSelector((state) => state.products);
 
     return (
         <div>
-            <h1>App</h1>
-            <button onClick={CreateHandler}>Create Product</button>
+            <h1>Products</h1>
+            {products?.map((product) => (
+                <div key={product.id}>
+                    <span>{product.name}</span> | <button>Delete</button>
+                </div>
+            ))}
         </div>
     );
 };

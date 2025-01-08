@@ -1,0 +1,11 @@
+1. Install dependencies of redux toolkit
+2. Create folder "store" inside "src" folder
+3. In "store" folder create "store.jsx" file
+4. In "store.jsx" write the code to configureStore
+5. In "main.jsx" wrap the <App /> with Provider and pass store prop as store
+6. Create  new folder "reducers" in "store" folder and create a 
+    slice(file) i.e. "productSlice.jsx"
+7. code to createSlice and default export the slice.reducer
+8. import the "productSlice" in "store.jsx" and pass it to the reducer
+9. In order to access the store data in any react component we use 
+    "useSelector(cb)" hook given by redux which is read-only
