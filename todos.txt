@@ -8,4 +8,7 @@
 7. code to createSlice and default export the slice.reducer
 8. import the "productSlice" in "store.jsx" and pass it to the reducer
 9. In order to access the store data in any react component we use 
-    "useSelector(cb)" hook given by redux which is read-only
+    "useSelector(cb)" hook given by redux which is read-only    
+10. to make the create functionality create a form in "App.jsx" and make "AddHandler" function (holds the newProduct object)
+11. In "productSlice.jsx" create an Action "add" which has the code to add new product in initialState and const export the "productSlice.actions"
+12. In "App.jsx" import add and dispatch the new product
