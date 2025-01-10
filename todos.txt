@@ -12,3 +12,5 @@
 10. to make the create functionality create a form in "App.jsx" and make "AddHandler" function (holds the newProduct object)
 11. In "productSlice.jsx" create an Action "add" which has the code to add new product in initialState and const export the "productSlice.actions"
 12. In "App.jsx" import add and dispatch the new product
+13. In order to outsource action/ creating async action we will create new folder src/store/action and a file "productActions.jsx"
+14. We export the sync action from productActions.jsx and create asyn actions in it.

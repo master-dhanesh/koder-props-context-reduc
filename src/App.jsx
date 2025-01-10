@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { add } from "./store/reducers/productSlice";
+import { add, asyncremove } from "./store/actions/productActions";
 
 const App = () => {
     const dispatch = useDispatch();
@@ -18,9 +18,12 @@ const App = () => {
     return (
         <div>
             <h1>Products</h1>
-            {products?.map((product) => (
+            {products?.map((product, index) => (
                 <div key={product.id}>
-                    <span>{product.name}</span> | <button>Delete</button>
+                    <span>{product.name}</span> |{" "}
+                    <button onClick={() => dispatch(asyncremove(index))}>
+                        Delete
+                    </button>
                 </div>
             ))}
             <br />
